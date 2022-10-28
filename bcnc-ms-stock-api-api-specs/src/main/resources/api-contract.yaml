@@ -1,0 +1,79 @@
+openapi: 3.0.2
+info:
+  title: Api contract for stock.
+  description: Api contract to manage stock
+  termsOfService: none
+  contact:
+    email: bryan.tiban@blabla.blabla
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.0.1-SNAPSHOT
+servers:
+- url: https://stock.es/v1/
+tags:
+- name: stock
+  description: Operations on the stock
+paths:
+  /stock/prices:
+    get:
+      tags:
+      - stock
+      summary: Search prices products.
+      description: Obtains information about the prices being applied to the products passed by parameter.
+      operationId: searchPrices
+      parameters:
+      - name: applicationDate
+        in: query
+        description: Date on which the discount is applied
+        example: 2020-06-14T00:00:00Z
+        required: true
+        schema:
+          type: string
+          pattern: ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+      - name: product-id
+        in: query
+        description: Id assigned to the product.
+        example: 1
+        required: true
+        schema:
+          type: string
+          pattern: ([0-9]{1-15})
+      - name: brand-id
+        in: query
+        description: Id assigned to the brand
+        example: 1
+        required: true
+        schema:
+          type: string
+          pattern: ([0-9]{1-15})
+      responses:
+        200:
+          description: ApiLocation information recovered succesfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponseSearchPrice'
+components:
+  schemas:
+    ApiResponseSearchPrice:
+      type: object
+      properties:
+        product-id:
+          type: string
+          description: product id.
+          example: 1
+        brand-id:
+          type: string
+          description: brand id.
+          example: 1
+        rate-id:
+          type: string
+          description: rate id.
+          example: 1
+        price:
+          type: number
+          description: final price of product
+          example: 35.5
