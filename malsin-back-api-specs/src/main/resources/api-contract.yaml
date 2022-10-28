@@ -1,0 +1,183 @@
+openapi: 3.0.2
+info:
+  title: Api contract for social media requests.
+  description: "Api contract to manage requests"
+  termsOfService: none
+  contact:
+    email: bgtiban@outlook.es
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.0.1-SNAPSHOT
+servers:
+- url: https://malsin.es/v1/
+tags:
+- name: social-media
+  description: Operations about ...
+paths:
+  /social-media/incidences:
+    post:
+      tags:
+        - social-media
+      summary: Create new incidence
+      description: Send information about an incidence.
+      operationId: createIncidence
+      requestBody:
+        description: State about incidence creation.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiIncidence'
+      responses:
+        201:
+          description: Create correctly.
+          
+          
+  /social-media/incidences/list:
+    get:
+      tags:
+        - social-media
+      summary: Search incidences near Location
+      description: List of incidences near current Location
+      operationId: searchIncidencesNearLocation
+      parameters:
+        - name: longitude
+          in: query
+          schema:
+            type: string
+        - name: latitude
+          in: query
+          schema: 
+            type: string
+        - name: altitude
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: List incidences near current location
+  
+  /social-media/incidences/{id-incidence}:
+    get:
+      tags:
+        - social-media
+      summary: Get incidence by id.
+      description: Get incidence information by ID incidece.
+      operationId: getIncidence
+      parameters:
+        - name: id-incidence
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Get information about incidence.
+        
+          
+  /social-media/accounts:
+    post:
+      tags:
+        - social-media
+      summary: Create new account.
+      description: With empty data create random account
+      operationId: createAccount
+      requestBody:
+        description: New account Data.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiAccount'
+      responses:
+        201:
+          description: Create correctly.
+      
+    get:
+      tags:
+        - social-media
+      summary: Get account by id
+      description: Get information account by Id account.
+      operationId: getAccount
+      parameters:
+        - name: user-id
+          in: query
+          schema:
+            type: string
+      responses:
+        200:
+          description: ApiLocation information recovered succesfully
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiLocation'
+                
+  /social-media/accounts/settings/changue-social-media:
+    post:
+      tags:
+        - social-media
+      summary: Changue settings about social media destination.
+      description: Change the social networks on which incidencias will be posted.
+      operationId: changuePostedSocialMedia
+      requestBody:
+        description: ApiSettings data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiSettings'
+      responses:
+        200:
+          description: Modified correctly
+          
+  
+components:
+  schemas:
+    ApiIncidence:
+      type: object
+      properties:
+        user-id: 
+          type: string
+          example: XV1234456789
+        description:
+          type: string
+        multimedia:
+          type: string
+          format: binary
+        location:
+          $ref: '#/components/schemas/ApiLocation'
+    ApiLocation:
+      type: object
+      properties: 
+        latitude:
+          type: number
+        longitude: 
+          type: number
+        altitude: 
+          type: number
+        road-type:
+          type: string
+        number:
+          type: string
+        floor: 
+          type: string
+        door:
+          type: string
+    ApiAccount:
+      type: object
+      properties:
+        name: 
+          type: string
+    ApiSettings:
+      type: object
+      properties:
+        social-media:
+          type: string
+          enum:
+            - TWITTER
+            - FACEBOOK
+            - INSTAGRAM
+            - ALL
+        
+      
+      
+        
+        
