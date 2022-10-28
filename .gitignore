@@ -64,3 +64,4 @@ postgres-data
 **/META-INF/**
 hibernate.cfg.xml
 **/bin/**
+.vscode/
