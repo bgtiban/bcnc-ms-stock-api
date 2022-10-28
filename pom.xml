@@ -10,11 +10,11 @@
 		<relativePath />
 	</parent>
 
-	<groupId>es.bgtiban.malsin</groupId>
-	<artifactId>malsin-back</artifactId>
+	<groupId>es.bcnc.stock.api</groupId>
+	<artifactId>bcnc-ms-stock-api</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>malsin</name>
+	<name>bcnc-ms-stock-api</name>
 
 	<properties>
 
@@ -22,7 +22,7 @@
 		<!-- General properties -->
 		<!-- ********************************************************************************************** -->
 		<java.version>17</java.version>
-		<maven-required.version>3.8.1</maven-required.version>
+		<maven-required.version>3.8.6</maven-required.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -333,37 +333,37 @@
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>malsin-back-domain</artifactId>
+				<artifactId>bcnc-ms-stock-api-domain</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>malsin-back-application</artifactId>
+				<artifactId>bcnc-ms-stock-api-application</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>malsin-back-infrastructure</artifactId>
+				<artifactId>bcnc-ms-stock-api-infrastructure</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>malsin-back-boot</artifactId>
+				<artifactId>bcnc-ms-stock-api-boot</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
-				<artifactId>malsin-back-api-specs</artifactId>
+				<artifactId>bcnc-ms-stock-api-api-specs</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<modules>
-		<module>malsin-back-api-specs</module>
-		<module>malsin-back-domain</module>
-		<module>malsin-back-application</module>
-		<module>malsin-back-infrastructure</module>
-		<module>malsin-back-boot</module>
+		<module>bcnc-ms-stock-api-api-specs</module>
+		<module>bcnc-ms-stock-api-domain</module>
+		<module>bcnc-ms-stock-api-application</module>
+		<module>bcnc-ms-stock-api-infrastructure</module>
+		<module>bcnc-ms-stock-api-boot</module>
 	</modules>
 </project>

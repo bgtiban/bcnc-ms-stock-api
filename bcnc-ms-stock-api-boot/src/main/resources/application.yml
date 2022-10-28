@@ -1,0 +1,52 @@
+server:
+  port: 8088
+  
+spring:
+  jmx:
+    enabled: false
+  flyway:
+    enabled: true
+    locations:
+    - classpath:scripts/migration
+    schemas:
+    - ${DB_NAME:stock}
+    create-schemas: true
+    validate-on-migrate: true
+    baseline-on-migrate: true
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:172.168.0.10}:5432/${DB_NAME:stock}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+    driver-class-name: org.postgresql.Driver
+    
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /api-docs/contract.html
+    
+logging:
+  level:
+    es:
+      bgtiban: DEBUG
+    org:
+      springframework: INFO
+    springfox:
+      documentation: INFO
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:  health, info, metrics, prometheus
