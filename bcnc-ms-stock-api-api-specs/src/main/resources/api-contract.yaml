@@ -12,13 +12,13 @@ info:
 servers:
 - url: https://stock.es/v1/
 tags:
-- name: stock
+- name: ApiStock
   description: Operations on the stock
 paths:
   /stock/prices:
     get:
       tags:
-      - stock
+      - ApiStock
       summary: Search prices products.
       description: Obtains information about the prices being applied to the products passed by parameter.
       operationId: searchPrices
