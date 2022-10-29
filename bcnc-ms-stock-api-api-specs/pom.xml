@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>es.bcnc.stock.api</groupId>
+		<groupId>es.bcnc.api</groupId>
 		<artifactId>bcnc-ms-stock-api</artifactId>
 		<version>1.0-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
@@ -86,14 +86,14 @@
 							<inputSpec>${project.basedir}/src/main/resources/api-contract.yaml</inputSpec>
 							<verbose>false</verbose>
 							<generatorName>spring</generatorName>
-							<apiPackage>es.bcnc.stock.api.api</apiPackage>
-							<modelPackage>es.bcnc.stock.api.model</modelPackage>
+							<apiPackage>es.bcnc.api.api</apiPackage>
+							<modelPackage>es.bcnc.api.model</modelPackage>
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
 							<configOptions>
 								<delegatePattern>true</delegatePattern>
-								<apiPackage>es.bcnc.stock.api.rest.api</apiPackage>
-								<modelPackage>es.bcnc.stock.api.rest.model</modelPackage>
-								<invokerPackage>es.bcnc.stock.api.rest.invokers</invokerPackage>
+								<apiPackage>es.bcnc.api.rest.api</apiPackage>
+								<modelPackage>es.bcnc.api.rest.model</modelPackage>
+								<invokerPackage>es.bcnc.api.rest.invokers</invokerPackage>
 							</configOptions>
 						</configuration>
 					</execution>

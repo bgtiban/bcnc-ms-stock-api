@@ -26,11 +26,11 @@ paths:
       - name: applicationDate
         in: query
         description: Date on which the discount is applied
-        example: 2020-06-14T00:00:00Z
+        example: 2020-06-14
         required: true
         schema:
           type: string
-          pattern: ([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))
+          pattern: '([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))'
       - name: product-id
         in: query
         description: Id assigned to the product.
@@ -38,7 +38,7 @@ paths:
         required: true
         schema:
           type: string
-          pattern: ([0-9]{1-15})
+          pattern: '^[0-9]{1,15}$'
       - name: brand-id
         in: query
         description: Id assigned to the brand
@@ -46,7 +46,7 @@ paths:
         required: true
         schema:
           type: string
-          pattern: ([0-9]{1-15})
+          pattern: '^[0-9]{1,15}$'
       responses:
         200:
           description: ApiLocation information recovered succesfully

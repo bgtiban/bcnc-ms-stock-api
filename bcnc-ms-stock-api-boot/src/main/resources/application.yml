@@ -28,7 +28,8 @@ springdoc:
 logging:
   level:
     es:
-      bgtiban: DEBUG
+      bcnc:
+        stock: DEBUG
     org:
       springframework: INFO
     springfox:

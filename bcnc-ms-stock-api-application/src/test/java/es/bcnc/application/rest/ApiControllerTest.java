@@ -1,4 +1,4 @@
-package es.bgtiban.application.rest;
+package es.bcnc.application.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
