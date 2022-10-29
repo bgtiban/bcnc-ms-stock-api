@@ -1,6 +1,8 @@
 package es.bcnc.application.rest;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -22,10 +24,10 @@ public class AppSearchPricesController implements ApiStockApi {
 	@Override
 	public ResponseEntity<List<ApiResponseSearchPriceDto>> searchPrices(String applicationDate, String productId, String brandId) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDateTime date = LocalDateTime.parse(applicationDate, formatter);
+		LocalDate date = LocalDate.parse(applicationDate, formatter);
 		List<ApiResponseSearchPriceDto> listDto =mapper.toDtoList(
 				service.searchPrices(
-						date, Long.parseLong(productId), Long.parseLong(brandId)));;
+						LocalDateTime.of(date, LocalTime.of(0, 0)), Long.parseLong(productId), Long.parseLong(brandId)));;
 		return ResponseEntity.ok(listDto);
 	}
 

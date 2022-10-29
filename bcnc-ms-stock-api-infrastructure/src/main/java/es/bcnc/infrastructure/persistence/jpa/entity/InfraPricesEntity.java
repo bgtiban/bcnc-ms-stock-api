@@ -8,13 +8,17 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Entity
 @Table(name="PRICES")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class InfraPricesEntity {
 	
 	@Id
