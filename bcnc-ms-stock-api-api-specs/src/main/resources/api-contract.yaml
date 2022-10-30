@@ -37,7 +37,7 @@ paths:
         required: true
         schema:
           type: string
-          example: 1 
+          example: 35455 
           pattern: '^[0-9]{1,15}$'
       - name: brand-id
         in: query
@@ -64,7 +64,7 @@ components:
         product-id:
           type: string
           description: product id.
-          example: 1
+          example: 35455
         brand-id:
           type: string
           description: brand id.

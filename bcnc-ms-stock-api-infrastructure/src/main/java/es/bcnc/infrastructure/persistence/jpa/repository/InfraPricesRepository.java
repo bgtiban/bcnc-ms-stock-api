@@ -14,8 +14,8 @@ public interface InfraPricesRepository extends JpaRepository<InfraPricesEntity, 
 					+ "FROM PRICES\n"
 					+ "WHERE START_DATE <=  ?1 \n"
 					+ "AND END_DATE >=  ?1 \n"
-					+ "AND BRAND_ID = ?2\n"
-					+ "AND PRICE_LIST = ?3")
-	List<InfraPricesEntity> findPrices(String applicationDate, long brandId, long priceListId);
+					+ "AND BRAND_ID = ?3\n"
+					+ "AND PRODUCT_ID = ?2")
+	List<InfraPricesEntity> findPrices(String applicationDate, long productId, long brandId);
 
 }
