@@ -16,6 +16,6 @@ public interface InfraPricesRepository extends JpaRepository<InfraPricesEntity, 
 					+ "AND END_DATE >=  ?1 \n"
 					+ "AND BRAND_ID = ?3\n"
 					+ "AND PRODUCT_ID = ?2")
-	List<InfraPricesEntity> findPriceByPriority(String applicationDate, long productId, long brandId);
+	List<InfraPricesEntity> searchPrices(String applicationDate, long productId, long brandId);
 
 }

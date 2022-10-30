@@ -22,7 +22,7 @@ public class InfraSearchPricesJpaAdapter implements IDomainSearchPricesRepositor
 	@Override
 	public Optional<List<DomainSearchPriceResultModel>> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID) {
 		List<DomainSearchPriceResultModel> domainList = mapper.toModelList(
-				repo.findPriceByPriority(applicationDate.format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss")),
+				repo.searchPrices(applicationDate.format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss")),
 						productId, 
 						brandID));
 
