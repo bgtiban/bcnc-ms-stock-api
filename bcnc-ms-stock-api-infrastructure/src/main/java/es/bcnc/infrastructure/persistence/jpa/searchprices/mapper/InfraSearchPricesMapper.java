@@ -1,4 +1,4 @@
-package es.bcnc.infrastructure.persistence.jpa.mapper;
+package es.bcnc.infrastructure.persistence.jpa.searchprices.mapper;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValueMappingStrategy;
 
 import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
-import es.bcnc.infrastructure.persistence.jpa.entity.InfraPricesEntity;
+import es.bcnc.infrastructure.persistence.jpa.searchprices.entity.InfraPricesEntity;
 
 @Mapper(collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
 nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, injectionStrategy = InjectionStrategy.CONSTRUCTOR,

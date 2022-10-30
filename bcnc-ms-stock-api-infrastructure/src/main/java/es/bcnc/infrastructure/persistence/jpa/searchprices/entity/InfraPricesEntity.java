@@ -1,4 +1,4 @@
-package es.bcnc.infrastructure.persistence.jpa.entity;
+package es.bcnc.infrastructure.persistence.jpa.searchprices.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

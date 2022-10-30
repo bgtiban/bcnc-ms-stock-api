@@ -1,4 +1,4 @@
-package es.bcnc.infrastructure.persistence.jpa.adapter;
+package es.bcnc.infrastructure.persistence.jpa.searchprices.adapter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -7,8 +7,8 @@ import java.util.Optional;
 
 import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
 import es.bcnc.domain.spi.searchprices.IDomainSearchPricesRepositoryPort;
-import es.bcnc.infrastructure.persistence.jpa.mapper.InfraSearchPricesMapper;
-import es.bcnc.infrastructure.persistence.jpa.repository.InfraPricesRepository;
+import es.bcnc.infrastructure.persistence.jpa.searchprices.mapper.InfraSearchPricesMapper;
+import es.bcnc.infrastructure.persistence.jpa.searchprices.repository.InfraPricesRepository;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

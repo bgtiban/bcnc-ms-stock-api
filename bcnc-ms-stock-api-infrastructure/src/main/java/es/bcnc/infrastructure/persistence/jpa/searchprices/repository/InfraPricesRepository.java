@@ -1,11 +1,11 @@
-package es.bcnc.infrastructure.persistence.jpa.repository;
+package es.bcnc.infrastructure.persistence.jpa.searchprices.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import es.bcnc.infrastructure.persistence.jpa.entity.InfraPricesEntity;
+import es.bcnc.infrastructure.persistence.jpa.searchprices.entity.InfraPricesEntity;
 
 public interface InfraPricesRepository extends JpaRepository<InfraPricesEntity, Long>{
 
