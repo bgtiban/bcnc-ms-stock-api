@@ -15,7 +15,7 @@ tags:
 - name: ApiStock
   description: Operations on the stock
 paths:
-  /stock/prices/priority:
+  /stock/prices:
     get:
       tags:
       - ApiStock
