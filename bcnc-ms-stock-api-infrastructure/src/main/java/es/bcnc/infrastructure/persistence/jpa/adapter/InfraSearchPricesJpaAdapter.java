@@ -1,6 +1,7 @@
 package es.bcnc.infrastructure.persistence.jpa.adapter;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,9 @@ public class InfraSearchPricesJpaAdapter implements IDomainSearchPricesRepositor
 	
 	@Override
 	public Optional<List<DomainSearchPriceModel>> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID) {
-		List<DomainSearchPriceModel> domainList = mapper.toModelList(repo.findPrices(applicationDate.toString(), productId, brandID));
+		List<DomainSearchPriceModel> domainList = mapper.toModelList(
+				repo.findPrices(applicationDate.format(
+						DateTimeFormatter.ofPattern("YYYY-MM-dd")), productId, brandID));
 
 		return 	Optional.ofNullable(domainList);
 	}
