@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValueMappingStrategy;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
+import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
 import es.bcnc.infrastructure.persistence.jpa.entity.InfraPricesEntity;
 
 @Mapper(collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,

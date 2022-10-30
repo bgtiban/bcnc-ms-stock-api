@@ -15,12 +15,12 @@ tags:
 - name: ApiStock
   description: Operations on the stock
 paths:
-  /stock/prices:
+  /stock/prices/priority:
     get:
       tags:
       - ApiStock
-      summary: Search prices products.
-      description: Obtains information about the prices being applied to the products passed by parameter.
+      summary: Search price product.
+      description: Obtains information about the price being applied to the products passed by parameter.
       operationId: searchPrices
       parameters:
       - name: applicationDate
@@ -52,7 +52,7 @@ paths:
           description: ApiLocation information recovered succesfully
           content:
             application/json:
-              schema:
+              schema: 
                 type: array
                 items:
                   $ref: '#/components/schemas/ApiResponseSearchPrice'

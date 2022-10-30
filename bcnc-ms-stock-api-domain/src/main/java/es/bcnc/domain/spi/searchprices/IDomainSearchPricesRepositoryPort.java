@@ -1,10 +1,10 @@
-package es.bcnc.domain.spi.search_prices;
+package es.bcnc.domain.spi.searchprices;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
+import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
 
 public interface IDomainSearchPricesRepositoryPort {
 

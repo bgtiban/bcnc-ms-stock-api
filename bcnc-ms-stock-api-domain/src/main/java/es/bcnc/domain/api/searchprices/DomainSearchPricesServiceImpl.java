@@ -1,11 +1,11 @@
-package es.bcnc.domain.api.search_prices;
+package es.bcnc.domain.api.searchprices;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
-import es.bcnc.domain.spi.search_prices.IDomainSearchPricesRepositoryPort;
+import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
+import es.bcnc.domain.spi.searchprices.IDomainSearchPricesRepositoryPort;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

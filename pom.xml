@@ -56,7 +56,7 @@
 		<!-- ********************************************************************************************** -->
 		<commons-validator.version>1.7</commons-validator.version>
 		<jackson-databind-nullable.version>0.2.1</jackson-databind-nullable.version>
-		<lombok.version>1.18.22</lombok.version>
+		<lombok.version>1.18.24</lombok.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
 		<commons-collections4-version>4.4</commons-collections4-version>
 		<!-- <hibernate-validator.version>7.0.1.Final</hibernate-validator.version> -->

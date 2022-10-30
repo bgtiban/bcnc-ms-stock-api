@@ -1,4 +1,4 @@
-package es.bcnc.application.rest.searchPrices;
+package es.bcnc.application.rest.searchprices;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValueMappingStrategy;
 
 import es.bcnc.api.rest.model.ApiResponseSearchPriceDto;
-import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
+import es.bcnc.domain.model.searchprices.DomainSearchPriceResultModel;
 
 
 

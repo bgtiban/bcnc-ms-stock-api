@@ -1,4 +1,4 @@
-package es.bcnc.application.rest.searchPrices;
+package es.bcnc.application.rest.searchprices;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
