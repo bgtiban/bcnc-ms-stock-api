@@ -20,7 +20,7 @@ public class InfraSearchPricesJpaAdapter implements IDomainSearchPricesRepositor
 	
 	@Override
 	public Optional<List<DomainSearchPriceModel>> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID) {
-		List<DomainSearchPriceModel> domainList = mapper.toModelList(repo.findAll());
+		List<DomainSearchPriceModel> domainList = mapper.toModelList(repo.findPrices(applicationDate.toString(), productId, brandID));
 
 		return 	Optional.ofNullable(domainList);
 	}
