@@ -9,7 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValueMappingStrategy;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceModel;
+import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
 import es.bcnc.infrastructure.persistence.jpa.entity.InfraPricesEntity;
 
 @Mapper(collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
@@ -18,8 +18,8 @@ componentModel = "spring")
 public interface InfraSearchPricesMapper {
 	
 	@Mapping(target = "rateId", source = "priceList")
-	public DomainSearchPriceModel toModel(InfraPricesEntity entity);
+	public DomainSearchPriceResultModel toModel(InfraPricesEntity entity);
 	
 	
-	public List<DomainSearchPriceModel> toModelList(List<InfraPricesEntity> entities);
+	public List<DomainSearchPriceResultModel> toModelList(List<InfraPricesEntity> entities);
 }

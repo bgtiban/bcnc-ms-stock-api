@@ -1,8 +1,6 @@
-package es.bcnc.application.rest;
+package es.bcnc.application.rest.searchPrices;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import es.bcnc.api.rest.api.ApiStockApi;
 import es.bcnc.api.rest.model.ApiResponseSearchPriceDto;
 import es.bcnc.domain.api.search_prices.IDomainSearchPricesService;
+import es.bcnc.domain.cross.DomainCrossRegex;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -23,11 +22,13 @@ public class AppSearchPricesController implements ApiStockApi {
 	
 	@Override
 	public ResponseEntity<List<ApiResponseSearchPriceDto>> searchPrices(String applicationDate, String productId, String brandId) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDate date = LocalDate.parse(applicationDate, formatter);
+		LocalDateTime dateTime = LocalDateTime.parse(
+				applicationDate, 
+				DateTimeFormatter.ofPattern(DomainCrossRegex.BCNC_DATE_TIME_FORMAT.getRegex()));
+		
 		List<ApiResponseSearchPriceDto> listDto =mapper.toDtoList(
-				service.searchPrices(
-						LocalDateTime.of(date, LocalTime.of(0, 0)), Long.parseLong(productId), Long.parseLong(brandId)));;
+				service.searchPrices(dateTime, Long.parseLong(productId), Long.parseLong(brandId)));
+		
 		return ResponseEntity.ok(listDto);
 	}
 

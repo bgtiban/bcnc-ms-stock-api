@@ -1,4 +1,4 @@
-package es.bcnc.application.rest;
+package es.bcnc.application.rest.searchPrices;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

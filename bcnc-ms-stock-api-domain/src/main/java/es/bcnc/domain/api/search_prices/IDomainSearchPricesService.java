@@ -3,9 +3,9 @@ package es.bcnc.domain.api.search_prices;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceModel;
+import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
 
 public interface IDomainSearchPricesService {
 
-	public List<DomainSearchPriceModel> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID);
+	public List<DomainSearchPriceResultModel> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID);
 }

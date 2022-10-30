@@ -5,7 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
-import es.bcnc.domain.model.search_prices.DomainSearchPriceModel;
+import es.bcnc.domain.cross.DomainCrossRegex;
+import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
 import es.bcnc.domain.spi.search_prices.IDomainSearchPricesRepositoryPort;
 import es.bcnc.infrastructure.persistence.jpa.mapper.InfraSearchPricesMapper;
 import es.bcnc.infrastructure.persistence.jpa.repository.InfraPricesRepository;
@@ -20,10 +21,11 @@ public class InfraSearchPricesJpaAdapter implements IDomainSearchPricesRepositor
 	private InfraSearchPricesMapper mapper;
 	
 	@Override
-	public Optional<List<DomainSearchPriceModel>> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID) {
-		List<DomainSearchPriceModel> domainList = mapper.toModelList(
-				repo.findPrices(applicationDate.format(
-						DateTimeFormatter.ofPattern("YYYY-MM-dd")), productId, brandID));
+	public Optional<List<DomainSearchPriceResultModel>> searchPrices(LocalDateTime applicationDate, Long productId, Long brandID) {
+		List<DomainSearchPriceResultModel> domainList = mapper.toModelList(
+				repo.findPrices(applicationDate.format(DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss")),
+						productId, 
+						brandID));
 
 		return 	Optional.ofNullable(domainList);
 	}

@@ -1,4 +1,4 @@
-package es.bcnc.application.rest;
+package es.bcnc.application.rest.searchPrices;
 
 import java.util.List;
 
@@ -9,16 +9,16 @@ import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.NullValueMappingStrategy;
 
 import es.bcnc.api.rest.model.ApiResponseSearchPriceDto;
-import es.bcnc.domain.model.search_prices.DomainSearchPriceModel;
+import es.bcnc.domain.model.search_prices.DomainSearchPriceResultModel;
 
 
 
 @Mapper(collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
 nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL, injectionStrategy = InjectionStrategy.CONSTRUCTOR,
-componentModel = "spring")
+componentModel = "spring", uses = {AppLocalDateTimeToStringMapper.class})
 public interface IAppSearchPricesMapper {
 
-	public ApiResponseSearchPriceDto toDto(DomainSearchPriceModel model);
+	public ApiResponseSearchPriceDto toDto(DomainSearchPriceResultModel model);
 	
-	public List<ApiResponseSearchPriceDto> toDtoList(List<DomainSearchPriceModel> models);
+	public List<ApiResponseSearchPriceDto> toDtoList(List<DomainSearchPriceResultModel> models);
 }
