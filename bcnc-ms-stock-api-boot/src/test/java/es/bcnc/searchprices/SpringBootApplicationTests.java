@@ -1,4 +1,4 @@
-package es.bcnc;
+package es.bcnc.searchprices;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,7 +21,7 @@ class SpringBootApplicationTests {
 	private AppSearchPricesController controller;
 	
 	@Test
-	void tes1() {
+	void test1() {
 		ApiResponseSearchPriceDto r1 = new ApiResponseSearchPriceDto();
 		r1.setProductId("35455");
 		r1.setBrandId("1");
@@ -39,7 +39,7 @@ class SpringBootApplicationTests {
 	}
 	
 	@Test
-	void tes2() {
+	void test2() {
 		ApiResponseSearchPriceDto r1 = new ApiResponseSearchPriceDto();
 		r1.setProductId("35455");
 		r1.setBrandId("1");
@@ -65,7 +65,7 @@ class SpringBootApplicationTests {
 	}
 	
 	@Test
-	void tes3() {
+	void test3() {
 		ApiResponseSearchPriceDto r1 = new ApiResponseSearchPriceDto();
 		r1.setProductId("35455");
 		r1.setBrandId("1");
@@ -83,7 +83,7 @@ class SpringBootApplicationTests {
 	}
 	
 	@Test
-	void tes4() {
+	void test4() {
 		ApiResponseSearchPriceDto r1 = new ApiResponseSearchPriceDto();
 		r1.setProductId("35455");
 		r1.setBrandId("1");
@@ -109,7 +109,7 @@ class SpringBootApplicationTests {
 	}
 	
 	@Test
-	void tes5() {
+	void test5() {
 		ApiResponseSearchPriceDto r1 = new ApiResponseSearchPriceDto();
 		r1.setProductId("35455");
 		r1.setBrandId("1");
